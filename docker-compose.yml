@@ -1,0 +1,14 @@
+services:
+  build:
+    build: .
+    volumes:
+      - .:/app
+      - gradle-cache:/home/gradle/.gradle
+    working_dir: /app
+    # Compila o APK de debug. O resultado fica em
+    # app/build/outputs/apk/debug/app-debug.apk (na sua máquina também,
+    # graças ao volume acima)
+    command: gradle assembleDebug --no-daemon
+
+volumes:
+  gradle-cache:

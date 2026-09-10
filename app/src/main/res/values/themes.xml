@@ -1,0 +1,5 @@
+<resources>
+    <!-- Tema base da Activity. O visual "de verdade" do app vem do
+         MyApplicationTheme (Composable) em ui/theme/Theme.kt -->
+    <style name="Theme.PCPartsManager" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

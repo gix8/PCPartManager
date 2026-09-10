@@ -2,7 +2,7 @@
 
 ## O que tem aqui
 
-7 arquivos Kotlin prontos para colar dentro do projeto Android que vocês já têm
+7 arquivos Kotlin prontos para colar dentro do projeto Android que já têm
 (o mesmo padrão do `myapplication` visto em aula, com `ui/theme/`):
 
 | Arquivo | Conteúdo | Responsável                 |
@@ -16,14 +16,6 @@
 | `TelaDesejos.kt` | Tela 4 — lista de desejos | **João**                    |
 | `TelaDetalhePeca.kt` | Tela 5 — detalhe de uma peça | **Léo**                     |
 | `MainActivity.kt` | Junta tudo e faz a navegação | quem ficar de integrador(a) |
-
-Como o grupo tem 5+ pessoas e o mínimo é 3 telas, dá pra:
-- 5 pessoas ficarem com uma tela cada (o que já está pronto), e
-- quem sobrar cuidar do `Modelos.kt`/`Dados.kt` (modelar os dados) e do
-  `MainActivity.kt` (integração), ou adicionar uma funcionalidade extra em
-  cima de uma tela existente (ex.: um botão "editar" na tela de detalhe).
-
-Na apresentação, cada um explica o arquivo/tela que fez.
 
 ## Como instalar
 
@@ -44,28 +36,18 @@ dentro do pacote certo).
 
 ## Sobre as restrições da atividade
 
-Usei só o que apareceu no material de aula de vocês:
-- `remember` / `mutableStateOf` para estado (igual ao `Form.kt`)
-- `LazyColumn` com `items { }` (igual ao `MainActivity.kt` da aula de listas)
+foi usado só o que apareceu no material da aula:
+- `remember` / `mutableStateOf` para estado 
+- `LazyColumn` com `items { }` 
 - `OutlinedTextField`, `Card`, `Row`/`Column`, `Modifier.clickable`
 - `data class`, `when`, `filter`/`forEach`/`take`, funções com parâmetros
-  do tipo função (lambdas), exatamente como na aula de funções
-- `Scaffold` com `bottomBar` — é o mesmo `Scaffold` que vocês já usam, só
-  usando mais um dos parâmetros dele
+  do tipo função (lambdas)
+- `Scaffold` com `bottomBar`
 
-**Não usei**: Navigation Compose, ViewModel, Room/banco de dados, coroutines,
-bibliotecas de gráfico. A navegação é só uma variável de texto (`telaAtual`)
-trocada com `when`, do jeito mais simples possível.
+## O que foi simplificado em relação ao mockup
 
-Se o professor não tiver visto `horizontalScroll` (usado no filtro de
-categorias da tela de Inventário) ou `Modifier.background` com cor
-(usado nos badges), é só avisar que eu ajusto para uma versão ainda mais
-simples — nenhum desses dois é essencial para o funcionamento do app.
-
-## O que foi simplificado em relação ao mockup HTML
-
-O design original que vocês me mandaram tinha mais coisas do que o pedido
-mínimo (gráfico de pizza, alertas de garantia, tela "Mais", modal de
-cadastro). Deixei de fora o que dependia de recursos mais avançados
-(desenho de gráfico customizado, por exemplo) e mantive a essência de cada
+O design original tinha mais coisas do que o pedido
+mínimo (gráfico de pizza, alertas de garantia, modal de
+cadastro, etc). Deixamos de fora o que dependua de recursos mais avançados
+(desenho de gráfico customizado) e mantivemos a essência de cada
 tela com componentes básicos do Compose.

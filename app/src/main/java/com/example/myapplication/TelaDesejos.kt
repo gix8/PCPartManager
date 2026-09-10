@@ -29,7 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 // ============================================================
-// Tela desenvolvida por: [NOME DO INTEGRANTE 4]
+// Tela desenvolvida por: João
 // Tela 4 - Quero comprar: lista de desejos com filtro por prioridade
 // ============================================================
 @Composable

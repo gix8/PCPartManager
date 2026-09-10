@@ -28,7 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 // ============================================================
-// Tela desenvolvida por: [NOME DO INTEGRANTE 2]
+// Tela desenvolvida por: Giovani X
 // Tela 2 - Meu Inventário: lista de peças com busca e filtro
 // ============================================================
 @Composable

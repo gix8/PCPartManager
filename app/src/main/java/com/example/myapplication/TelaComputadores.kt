@@ -22,7 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 // ============================================================
-// Tela desenvolvida por: [NOME DO INTEGRANTE 3]
+// Tela desenvolvida por: Vinicius
 // Tela 3 - Computadores: lista de montagens (builds) e seus slots
 // ============================================================
 @Composable

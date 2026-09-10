@@ -19,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 // ============================================================
-// Tela desenvolvida por: [NOME DO INTEGRANTE 5]
+// Tela desenvolvida por: Léo
 // Tela 5 - Detalhe da peça: informações completas de uma peça
 // ============================================================
 @Composable

@@ -5,16 +5,16 @@
 7 arquivos Kotlin prontos para colar dentro do projeto Android que vocês já têm
 (o mesmo padrão do `myapplication` visto em aula, com `ui/theme/`):
 
-| Arquivo | Conteúdo | Responsável |
-|---|---|---|
-| `Modelos.kt` | `data class` de Peça, Computador, Desejo, etc. | (compartilhado) |
-| `Dados.kt` | Listas de exemplo (substitui um banco de dados) | (compartilhado) |
-| `Componentes.kt` | Pedaços de UI reaproveitados (cartão de peça, badge de status, chip de filtro) | (compartilhado) |
-| `TelaInicio.kt` | Tela 1 — dashboard | **Integrante 1** |
-| `TelaInventario.kt` | Tela 2 — lista de peças com busca/filtro | **Integrante 2** |
-| `TelaComputadores.kt` | Tela 3 — montagens (builds) | **Integrante 3** |
-| `TelaDesejos.kt` | Tela 4 — lista de desejos | **Integrante 4** |
-| `TelaDetalhePeca.kt` | Tela 5 — detalhe de uma peça | **Integrante 5** |
+| Arquivo | Conteúdo | Responsável                 |
+|---|---|-----------------------------|
+| `Modelos.kt` | `data class` de Peça, Computador, Desejo, etc. | (compartilhado)             |
+| `Dados.kt` | Listas de exemplo (substitui um banco de dados) | (compartilhado)             |
+| `Componentes.kt` | Pedaços de UI reaproveitados (cartão de peça, badge de status, chip de filtro) | (compartilhado)             |
+| `TelaInicio.kt` | Tela 1 — dashboard | **Bernardo**                |
+| `TelaInventario.kt` | Tela 2 — lista de peças com busca/filtro | **Giovani X**               |
+| `TelaComputadores.kt` | Tela 3 — montagens (builds) | **Vinicius**                |
+| `TelaDesejos.kt` | Tela 4 — lista de desejos | **João**                    |
+| `TelaDetalhePeca.kt` | Tela 5 — detalhe de uma peça | **Léo**                     |
 | `MainActivity.kt` | Junta tudo e faz a navegação | quem ficar de integrador(a) |
 
 Como o grupo tem 5+ pessoas e o mínimo é 3 telas, dá pra:

@@ -27,7 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 // ============================================================
-// Tela desenvolvida por: [NOME DO INTEGRANTE 1]
+// Tela desenvolvida por: Bernardo
 // Tela 1 - Início: visão geral do inventário (dashboard)
 // ============================================================
 @Composable

@@ -19,9 +19,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.hasRoute
 import com.example.myapplication.navigation.AppNavigation
 import com.example.myapplication.navigation.Cadastro
 import com.example.myapplication.navigation.Computadores
@@ -31,6 +31,7 @@ import com.example.myapplication.navigation.Inicio
 import com.example.myapplication.navigation.Inventario
 import com.example.myapplication.navigation.Login
 import com.example.myapplication.ui.theme.MyApplicationTheme
+import kotlin.reflect.KClass
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,14 +50,14 @@ fun App() {
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val destination = backStackEntry?.destination
-    val mostrarMenu = destination?.hasRoute<Login>() != true &&
-        destination?.hasRoute<Cadastro>() != true &&
-        destination?.hasRoute<DetalhePeca>() != true
+    val mostrarMenu = !destination.isRoute(Login::class) &&
+        !destination.isRoute(Cadastro::class) &&
+        !destination.isRoute(DetalhePeca::class)
 
     val telaAtual = when {
-        destination?.hasRoute<Inventario>() == true -> "inventario"
-        destination?.hasRoute<Computadores>() == true -> "computadores"
-        destination?.hasRoute<Desejos>() == true -> "desejos"
+        destination.isRoute(Inventario::class) -> "inventario"
+        destination.isRoute(Computadores::class) -> "computadores"
+        destination.isRoute(Desejos::class) -> "desejos"
         else -> "inicio"
     }
 
@@ -130,4 +131,8 @@ private fun ItemMenu(rotulo: String, selecionado: Boolean, onClick: () -> Unit) 
             color = if (selecionado) MaterialTheme.colorScheme.primary else Color.Gray
         )
     }
+}
+
+private fun NavDestination?.isRoute(cls: KClass<*>): Boolean {
+    return this?.route?.startsWith(cls.qualifiedName ?: "") == true
 }

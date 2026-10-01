@@ -19,8 +19,4 @@ object AuthManager {
     fun login(email: String, senha: String): Boolean {
         return usuarios.any { it.email == email && it.senha == senha }
     }
-
-    fun limpar() {
-        usuarios.clear()
-    }
 }

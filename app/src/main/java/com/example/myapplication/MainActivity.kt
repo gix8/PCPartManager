@@ -31,6 +31,8 @@ import com.example.myapplication.navigation.Inicio
 import com.example.myapplication.navigation.Inventario
 import com.example.myapplication.navigation.Login
 import com.example.myapplication.ui.theme.MyApplicationTheme
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.myapplication.viewmodel.AuthViewModel
 import kotlin.reflect.KClass
 
 class MainActivity : ComponentActivity() {
@@ -48,6 +50,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun App() {
     val navController = rememberNavController()
+    val authViewModel: AuthViewModel = viewModel()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val destination = backStackEntry?.destination
     val mostrarMenu = !destination.isRoute(Login::class) &&
@@ -75,6 +78,7 @@ fun App() {
                         }
                     },
                     onSair = {
+                        authViewModel.sair()
                         navController.navigate(Login) {
                             popUpTo(0) { inclusive = true }
                         }
@@ -85,6 +89,7 @@ fun App() {
     ) { innerPadding ->
         AppNavigation(
             navController = navController,
+            authViewModel = authViewModel,
             modifier = Modifier.padding(innerPadding)
         )
     }

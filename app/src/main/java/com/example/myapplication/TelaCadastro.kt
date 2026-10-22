@@ -23,10 +23,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import com.example.myapplication.auth.AuthManager
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.myapplication.viewmodel.AuthViewModel
 
 @Composable
-fun TelaCadastro(irParaLogin: () -> Unit) {
+fun TelaCadastro(irParaLogin: () -> Unit, viewModel: AuthViewModel = viewModel()) {
     var nome by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var senha by remember { mutableStateOf("") }
@@ -59,7 +60,7 @@ fun TelaCadastro(irParaLogin: () -> Unit) {
                 when {
                     nome.isBlank() || email.isBlank() || senha.isBlank() ->
                         Toast.makeText(context, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
-                    AuthManager.cadastro(nome, email, senha) -> {
+                    viewModel.cadastrar(nome, email, senha) -> {
                         Toast.makeText(context, "Cadastro realizado", Toast.LENGTH_SHORT).show()
                         irParaLogin()
                     }

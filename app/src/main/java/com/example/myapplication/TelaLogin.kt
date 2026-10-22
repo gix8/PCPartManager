@@ -23,13 +23,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import com.example.myapplication.auth.AuthManager
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.myapplication.viewmodel.AuthViewModel
+import androidx.compose.runtime.LaunchedEffect
 
 @Composable
-fun TelaLogin(aoEntrar: () -> Unit, irParaCadastro: () -> Unit) {
+fun TelaLogin(aoEntrar: () -> Unit, irParaCadastro: () -> Unit, viewModel: AuthViewModel = viewModel()) {
     var email by remember { mutableStateOf("") }
     var senha by remember { mutableStateOf("") }
     val context = LocalContext.current
+    LaunchedEffect(viewModel.sessaoAtiva) {
+        if (viewModel.sessaoAtiva) aoEntrar()
+    }
 
     Column(
         modifier = Modifier.fillMaxSize().padding(20.dp),
@@ -60,7 +65,7 @@ fun TelaLogin(aoEntrar: () -> Unit, irParaCadastro: () -> Unit) {
 
         Button(
             onClick = {
-                if (AuthManager.login(email, senha)) {
+                if (viewModel.login(email, senha)) {
                     aoEntrar()
                 } else {
                     Toast.makeText(context, "E-mail ou senha inválidos", Toast.LENGTH_SHORT).show()

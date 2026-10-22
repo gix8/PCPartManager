@@ -37,6 +37,7 @@ data class Slot(
 
 // Um computador montado (build)
 data class Computador(
+    val id: Long = 0,
     val nome: String,
     val status: String, // "Ativo" ou "Em manutenção"
     val compatibilidade: String,

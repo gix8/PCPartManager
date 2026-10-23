@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.ui.telas
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -27,6 +27,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.myapplication.models.Desejo
+import com.example.myapplication.FiltroChip
+import com.example.myapplication.corPrioridade
 
 // ============================================================
 // Tela desenvolvida por: João

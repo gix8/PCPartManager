@@ -6,17 +6,17 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
-import com.example.myapplication.TelaCadastro
-import com.example.myapplication.TelaComputadores
-import com.example.myapplication.TelaDesejos
-import com.example.myapplication.TelaDetalhePeca
-import com.example.myapplication.TelaInicio
-import com.example.myapplication.TelaInventario
-import com.example.myapplication.TelaLogin
+import com.example.myapplication.ui.telas.TelaCadastro
+import com.example.myapplication.ui.telas.TelaComputadores
+import com.example.myapplication.ui.telas.TelaDesejos
+import com.example.myapplication.ui.telas.TelaDetalhePeca
+import com.example.myapplication.ui.telas.TelaInicio
+import com.example.myapplication.ui.telas.TelaInventario
+import com.example.myapplication.ui.telas.TelaLogin
 import com.example.myapplication.Dados
-import com.example.myapplication.viewmodel.AuthViewModel
-import com.example.myapplication.viewmodel.ComputadoresViewModel
-import com.example.myapplication.viewmodel.PecasViewModel
+import com.example.myapplication.ui.viewmodel.AuthViewModel
+import com.example.myapplication.ui.viewmodel.ComputadoresViewModel
+import com.example.myapplication.ui.viewmodel.PecasViewModel
 import androidx.compose.runtime.LaunchedEffect
 import androidx.lifecycle.viewmodel.compose.viewModel
 

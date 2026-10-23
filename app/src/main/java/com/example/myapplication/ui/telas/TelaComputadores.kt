@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.ui.telas
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -23,6 +23,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.myapplication.models.Computador
 
 @Composable
 fun TelaComputadores(computadores: List<Computador>, onSalvar: (Computador) -> Unit, onDeletar: (Long) -> Unit, modifier: Modifier = Modifier) {
@@ -43,5 +44,17 @@ fun TelaComputadores(computadores: List<Computador>, onSalvar: (Computador) -> U
 private fun ComputadorDialog(pc: Computador?, onDismiss: () -> Unit, onSalvar: (Computador) -> Unit) {
     var nome by remember { mutableStateOf(pc?.nome ?: "") }
     var valor by remember { mutableStateOf(pc?.valorTotal ?: "") }
-    AlertDialog(onDismissRequest = onDismiss, title = { Text(if (pc == null) "Cadastrar computador" else "Alterar computador") }, text = { Column { OutlinedTextField(nome, { nome = it }, label = { Text("Nome") }); OutlinedTextField(valor, { valor = it }, label = { Text("Valor total") }) } }, confirmButton = { Button(onClick = { if (nome.isNotBlank()) onSalvar(Computador(pc?.id ?: 0, nome, pc?.status ?: "Ativo", pc?.compatibilidade ?: "Compatível", pc?.compativel ?: true, valor, pc?.consumo ?: "", pc?.dataMontagem ?: "", emptyList())) }) { Text("Salvar") } }, dismissButton = { TextButton(onClick = onDismiss) { Text("Cancelar") } })
+    AlertDialog(onDismissRequest = onDismiss, title = { Text(if (pc == null) "Cadastrar computador" else "Alterar computador") }, text = { Column { OutlinedTextField(nome, { nome = it }, label = { Text("Nome") }); OutlinedTextField(valor, { valor = it }, label = { Text("Valor total") }) } }, confirmButton = { Button(onClick = { if (nome.isNotBlank()) onSalvar(
+        Computador(
+            pc?.id ?: 0,
+            nome,
+            pc?.status ?: "Ativo",
+            pc?.compatibilidade ?: "Compatível",
+            pc?.compativel ?: true,
+            valor,
+            pc?.consumo ?: "",
+            pc?.dataMontagem ?: "",
+            emptyList()
+        )
+    ) }) { Text("Salvar") } }, dismissButton = { TextButton(onClick = onDismiss) { Text("Cancelar") } })
 }

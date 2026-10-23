@@ -32,7 +32,7 @@ import com.example.myapplication.navigation.Inventario
 import com.example.myapplication.navigation.Login
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.myapplication.viewmodel.AuthViewModel
+import com.example.myapplication.ui.viewmodel.AuthViewModel
 import kotlin.reflect.KClass
 
 class MainActivity : ComponentActivity() {

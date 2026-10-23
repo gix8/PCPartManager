@@ -1,5 +1,11 @@
 package com.example.myapplication
 
+import com.example.myapplication.models.Peca
+import com.example.myapplication.models.Computador
+import com.example.myapplication.models.Desejo
+import com.example.myapplication.models.Slot
+import com.example.myapplication.models.RegistroManutencao
+
 // ==== Dados de exemplo ====
 // Simula um "banco de dados" fixo, para a equipe poder testar as telas
 // sem precisar de banco de dados de verdade (não foi visto em aula).

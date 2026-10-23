@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.ui.telas
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,6 +25,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.myapplication.models.Peca
 import java.util.UUID
 
 @Composable
@@ -61,5 +62,19 @@ private fun PecaDialog(peca: Peca?, onDismiss: () -> Unit, onSalvar: (Peca) -> U
     var marca by remember { mutableStateOf(peca?.marca ?: "") }
     var modelo by remember { mutableStateOf(peca?.modelo ?: "") }
     var preco by remember { mutableStateOf(peca?.preco ?: "") }
-    AlertDialog(onDismissRequest = onDismiss, title = { Text(if (peca == null) "Cadastrar peça" else "Alterar peça") }, text = { Column { OutlinedTextField(nome, { nome = it }, label = { Text("Nome") }); OutlinedTextField(categoria, { categoria = it }, label = { Text("Categoria") }); OutlinedTextField(marca, { marca = it }, label = { Text("Marca") }); OutlinedTextField(modelo, { modelo = it }, label = { Text("Modelo") }); OutlinedTextField(preco, { preco = it }, label = { Text("Preço") }) } }, confirmButton = { Button(onClick = { if (nome.isNotBlank()) onSalvar(Peca(peca?.id ?: UUID.randomUUID().toString(), nome, categoria, marca, modelo, peca?.status ?: "Disponível", peca?.localizacao ?: "", preco, peca?.dataCompra ?: "", peca?.numeroSerie ?: "", peca?.loja ?: "")) }) { Text("Salvar") } }, dismissButton = { TextButton(onClick = onDismiss) { Text("Cancelar") } })
+    AlertDialog(onDismissRequest = onDismiss, title = { Text(if (peca == null) "Cadastrar peça" else "Alterar peça") }, text = { Column { OutlinedTextField(nome, { nome = it }, label = { Text("Nome") }); OutlinedTextField(categoria, { categoria = it }, label = { Text("Categoria") }); OutlinedTextField(marca, { marca = it }, label = { Text("Marca") }); OutlinedTextField(modelo, { modelo = it }, label = { Text("Modelo") }); OutlinedTextField(preco, { preco = it }, label = { Text("Preço") }) } }, confirmButton = { Button(onClick = { if (nome.isNotBlank()) onSalvar(
+        Peca(
+            peca?.id ?: UUID.randomUUID().toString(),
+            nome,
+            categoria,
+            marca,
+            modelo,
+            peca?.status ?: "Disponível",
+            peca?.localizacao ?: "",
+            preco,
+            peca?.dataCompra ?: "",
+            peca?.numeroSerie ?: "",
+            peca?.loja ?: ""
+        )
+    ) }) { Text("Salvar") } }, dismissButton = { TextButton(onClick = onDismiss) { Text("Cancelar") } })
 }

@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.ui.telas
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -24,7 +24,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.myapplication.viewmodel.AuthViewModel
+import com.example.myapplication.ui.viewmodel.AuthViewModel
 
 @Composable
 fun TelaCadastro(irParaLogin: () -> Unit, viewModel: AuthViewModel = viewModel()) {
